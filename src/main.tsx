@@ -1,7 +1,7 @@
 import { unstableSetRender } from 'antd-mobile'; // Support since version ^5.40.0
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route, useMatch } from "react-router";
+import { BrowserRouter, Routes, Route, useMatch, Navigate } from "react-router";
 import './index.css'
 import HeroSelector from './pages/hero-selector/index.tsx';
 import HeroScore from './pages/hero-score/index.tsx';
@@ -19,7 +19,9 @@ function RootApp() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Navigate to="/hero-selector" replace />} />
         <Route path="/hero-score" element={<HeroScore />} />
+        <Route path="*" element={<Navigate to="/hero-selector" replace />} />
       </Routes>
       <KeepAlivePage
         path="/hero-selector"

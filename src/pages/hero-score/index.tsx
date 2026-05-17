@@ -3,6 +3,13 @@ import { useLocation, useNavigate } from "react-router"
 import { useEffect, useState } from "react"
 import axios from "axios"
 
+const platformTypeMap: Record<string, string> = {
+    'aqq': '安卓QQ',
+    'awx': '安卓微信',
+    'iqq': '苹果QQ',
+    'iwx': '苹果微信'
+}
+
 // 获取英雄最低战力
 async function getHero(params: { hero: string, type: string }): Promise<any> {
     try {
@@ -48,7 +55,7 @@ export default () => {
             {loading ? null :
                 <>
                     <NoticeBar content={`更新时间: ${data?.updatetime || '--'}`} color='success' />
-                    <List header={heroName}>
+                    <List header={`${heroName} (${platformTypeMap[selectedType]})`}>
                         <List.Item>大国: {data?.Top10 || '--'}</List.Item>
                         <List.Item>小国: {data?.Top100 || '--'}</List.Item>
                         <List.Item>省标: {data?.province?.[0]?.val || '--'} {data?.province?.[0]?.loc || '--'}</List.Item>

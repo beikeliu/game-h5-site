@@ -1,13 +1,41 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>game-h5-site</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!-- 移动端视口核心 必加 -->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <!-- 禁止缩放、适配刘海屏、完美H5体验 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no,email=no" />
+  <meta name="screen-orientation" content="portrait" />
+  <meta name="x5-orientation" content="portrait" />
+  <meta name="full-screen" content="yes" />
+  <meta name="x5-fullscreen" content="true" />
+
+  <!-- SEO 标题描述关键词 -->
+  <title>可可助手</title>
+  <meta name="keywords" content="王者荣耀最低战力,战区查询,省标市标区标,王者战力工具" />
+  <meta name="description" content="可可助手,专注游戏攻略站点" />
+
+  <!-- 微信分享专用 -->
+  <meta property="og:title" content="可可助手" />
+  <meta property="og:description" content="可可助手,专注游戏攻略站点" />
+  <meta property="og:image" content="https://game.gtimg.cn/images/yxzj/img201606/heroimg/166/166.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- 禁用缓存 部署更新立刻生效 -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

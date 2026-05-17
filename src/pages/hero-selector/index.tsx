@@ -1,4 +1,4 @@
-import { Avatar, Input, List, Selector } from "antd-mobile"
+import { Avatar, Input, List, NavBar, Selector } from "antd-mobile"
 import axios from "axios";
 import { useEffect, useMemo, useState } from "react"
 import { useNavigate } from "react-router"
@@ -37,6 +37,7 @@ export default () => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+            <NavBar back={null}>平台/英雄选择</NavBar>
             <div style={{ padding: '12px' }}>
                 <Selector
                     value={type}
