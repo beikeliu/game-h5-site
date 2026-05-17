@@ -37,7 +37,9 @@ export default () => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-            <NavBar back={null}>平台/英雄选择</NavBar>
+            <NavBar back={null} style={{ '--border-bottom': '1px #eee solid' }}>
+                平台/英雄选择
+            </NavBar>
             <div style={{ padding: '12px' }}>
                 <Selector
                     value={type}
@@ -52,7 +54,7 @@ export default () => {
                 />
             </div>
             <Input
-                style={{ padding: '0 12px 4px 12px'}}
+                style={{ padding: '0 12px 4px 12px' }}
                 placeholder='快速搜索英雄'
                 value={value}
                 onChange={val => {
