@@ -1,12 +1,14 @@
 {
   "version": 1,
-  "include": ["/*"],
-  "exclude": ["/api/*"],
   "routes": [
     {
-      "src": "/api/*",
-      "dest": "http://1.13.191.133:3000/api/:splat",
-      "continue": true
+      "src": "/api/:path*",
+      "dest": "http://1.13.191.133:3000/api/:path*",
+      "continue": false
+    },
+    {
+      "src": "/:path*",
+      "dest": "/index.html"
     }
   ]
 }
