@@ -1,5 +1,5 @@
 import { Avatar, Input, List, NavBar, Selector } from "antd-mobile"
-import axios from "axios";
+import request from "../../utils/request";
 import { useEffect, useMemo, useState } from "react"
 import { useNavigate } from "react-router"
 import type { Hero } from "../../types/hero"
@@ -9,7 +9,7 @@ type PlatformType = 'aqq' | 'awx' | 'iqq' | 'iwx'
 // 获取所有英雄列表
 async function getHeroList(): Promise<Hero[]> {
     try {
-        const res = await axios.get('http://1.13.191.133:3000/api/herolist');
+        const res = await request.get('/herolist');
         return res.data as Hero[]; // 直接返回英雄数组
     } catch (err) {
         console.error('获取英雄列表失败', err);
