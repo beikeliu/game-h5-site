@@ -13,7 +13,7 @@ const platformTypeMap: Record<string, string> = {
 // 获取英雄最低战力
 async function getHero(params: { hero: string, type: string }): Promise<any> {
     try {
-        const res = await axios.get(`https://1302621915-385ka30978.ap-beijing.tencentscf.com/api/gethero?hero=${params.hero}&type=${params.type}`);
+        const res = await axios.get(`http://1.13.191.133:3000/api/gethero?hero=${params.hero}&type=${params.type}`);
         return res.data;
     } catch (err) {
         console.error('获取英雄最低战力失败', err);

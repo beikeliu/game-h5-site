@@ -9,7 +9,7 @@ type PlatformType = 'aqq' | 'awx' | 'iqq' | 'iwx'
 // 获取所有英雄列表
 async function getHeroList(): Promise<Hero[]> {
     try {
-        const res = await axios.get('https://1302621915-385ka30978.ap-beijing.tencentscf.com/api/herolist');
+        const res = await axios.get('http://1.13.191.133:3000/api/herolist');
         return res.data as Hero[]; // 直接返回英雄数组
     } catch (err) {
         console.error('获取英雄列表失败', err);
