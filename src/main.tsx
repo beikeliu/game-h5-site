@@ -1,7 +1,7 @@
 import { unstableSetRender } from 'antd-mobile'; // Support since version ^5.40.0
-import { StrictMode } from 'react'
+import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route, useMatch, Navigate } from "react-router";
+import { BrowserRouter, Routes, Route, useMatch, useLocation, Navigate } from "react-router";
 import './index.css'
 import HeroSelector from './pages/hero-selector/index.tsx';
 import HeroScore from './pages/hero-score/index.tsx';
@@ -15,9 +15,24 @@ function KeepAlivePage({ path, element }: { path: string; element: React.ReactNo
   )
 }
 
+function RouteTitle() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.pathname === '/hero-selector' || location.pathname === '/hero-score') {
+      document.title = '王者最低战力查询'
+    } else {
+      document.title = '可可助手'
+    }
+  }, [location.pathname])
+
+  return null
+}
+
 function RootApp() {
   return (
     <BrowserRouter>
+      <RouteTitle />
       <Routes>
         <Route path="/" element={<Navigate to="/hero-selector" replace />} />
         <Route path="/hero-score" element={<HeroScore />} />
